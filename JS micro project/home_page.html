@@ -1,0 +1,202 @@
+
+<style>
+  .slide{
+    padding-top: 10px;
+    padding-bottom: 10p;
+    padding-bottom: none;
+  }
+  
+  .filterDiv {
+    float: left;
+    background-color: aqua;
+    color: black;
+    width: 100px;
+    line-height: 20px;
+    text-align: center;
+    margin: 15px;
+    display: none;
+  }
+  
+  .show {
+    display: table;
+  }
+  
+  .container {
+    margin-top: none;
+    overflow: hidden;
+  }
+  
+
+  .btn {
+    border: none;
+    outline: none;
+    padding: 15px 120px;
+    background-color: darkgray;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: burlywood;
+  }
+  
+  .btn.active {
+    background-color: royalblue;
+    color: white;
+  }
+  </style>
+<html>
+  <body>
+      <div style="background-color: salmon; text-align: center;">
+           <img  src="images/symbol.jpg" alt="online shop" width="150" height="100">
+           <span style="font-size: x-large; font-weight: bold">Product Kart</span>
+      </div>
+
+      <div class="slide">
+        <img  name="slide" width="1500" height="25%" style="padding: 5px;">
+    </div>
+
+     
+   <div id="myBtnContainer">
+      <button class="btn" onclick="filterSelection('filterDiv', this)" id="default"> All Categories</button>
+      <button class="btn" onclick="filterSelection('mobiles', this)"> Mobiles</button>
+      <button class="btn" onclick="filterSelection('laptops', this)"> laptops</button>
+      <button class="btn" onclick="filterSelection('earphones', this)"> Ear Phones</button>
+      <button class="btn" onclick="filterSelection('sports', this)"> Sports</button>
+    </div>
+    <br/>
+    
+    <div class="container">
+     <a href="11pro_info.html?product=p_1"> <div class="filterDiv mobiles" style="padding: 10px;">
+        <div> <img src="images/mobile.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_1" data-price='1,06,600'>Apple iPhone 11 Pro</div>
+        <div style="float: left;">Price: 1,06,600</div>
+        
+      </div></a>
+     <a href="oneplus8pro_info.html?product=p_2"> <div class="filterDiv mobiles" style="padding: 10px;">
+        <div><img src="images/oneplus.webp" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_2" data-price='59,999'>OnePlus 8 Pro</div></br>
+        <div style="float: left;">Price: 59,999</div>
+      </div></a>
+      <a href="reno_info.html?product=p_3"><div class="filterDiv mobiles" style="padding: 10px;">
+        <div><img src="msd.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_3" data-price='34,990'>OPPO Reno4 Pro</div></br>
+        <div style="float: left;">Price: 34,990</div>
+      </div></a>
+     <a href="Oxhox_info.html?product=p_4"> <div class="filterDiv earphones" style="padding: 10px;">
+        <div><img src="images/bluetooth neckband.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_4" data-price='999'>Oxhox HBS-730 Wireless </div>
+        <div style="float: left;">Price: 999</div>
+      </div></a>
+      <a href="buds_info.html?product=p_5"><div class="filterDiv earphones" style="padding: 10px;">
+        <div><img src="images/bassbuds.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_5" data-price='1,999'>WeCool Earbuds Moonwalk X </div>
+        <div style="float: left;">Price: 1,999</div>
+      </div></a>
+     <a href="macpro_info.html?product=p_6"><div class="filterDiv laptops" style="padding: 10px;">
+        <div><img src="mackbookpro.png" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_6" data-price='1,99,490'>Apple MacBook Pro </div>
+        <div style="float: left;">Price: 1,99,490</div>
+      </div></a>
+      <a href="macair_info.html?product=p_7"><div class="filterDiv laptops" style="padding: 10px;">
+        <div><img src="images/applelappy.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_7" data-price='1,22,990'>Apple MacBook Air 10th gen</div>
+        <div style="float: left;">Price: 1,22,990 </div>
+      </div></a>
+     <a href="lenovo_info.html?product=p_8"><div class="filterDiv laptops" style="padding: 10px;">
+        <div><img src="images/lenovo.jpeg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_8" data-price='54,990'>Lenovo Ideapad L340 Core i5</div>
+        <div style="float: left;">Price: 54,990</div>
+      </div></a>
+     <a href="foot_info.html?product=p_9"><div class="filterDiv sports" style="padding: 10px;">
+        <div><img src="images/football.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_9" data-price='799'>RAHICO CLUB Multicolor</div></br>
+        <div style="float: left;">Price: 799</div>
+      </div></a> 
+      <a href="basscket_info.html?product=p_10"><div class="filterDiv sports" style="padding: 10px;">
+        <div><img src="images/Basketball.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_10" data-price='999'>Nivia basketball</div></br>
+        <div style="float: left;">Price: 999</div>
+      </div></a>
+      <a href="bad_info.html?product=p_11"><div class="filterDiv sports" style="padding: 10px;">
+        <div><img src="images/badminton.jpeg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_11" data-price='699'>yonex cb 88 badminton</div>
+        <div style="float: left;">Price: 699</div>
+      </div></a>
+      <a href="sam_info.html?product=p_12"><div class="filterDiv mobiles" style="padding: 10px;">
+        <div><img src="images/samsung3.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_12" data-price='77,999'>Samsung Galaxy S20+ </div>
+        <div style="float: left;">Price: 77,999</div>
+      </div></a>
+      <a href="maci5_info.html?product=p_13"><div class="filterDiv laptops" style="padding: 10px;">
+        <div><img src="images/mac.jpg" width="200" height="200"></div>
+        <div style="float: left;" name="products" data-id="p_13" data-price='72,490'>Apple MacBook Air 5th gen</div>
+        <div style="float: left;">Price: 72,490</div>
+      </div></a>
+    </div>
+   
+</body>
+
+<script>
+ 
+  default_btn = document.getElementById("default");
+   filterSelection('filterDiv', default_btn);
+   function filterSelection(pr_class, ctrl){
+      var x = document.getElementsByClassName("filterDiv");
+      for (i = 0; i < x.length; i++) {
+      
+        if(x[i].className.indexOf(pr_class) > -1){
+          x[i].className += " show";
+        }else{
+          x[i].className = x[i].className.replace(/\bshow\b/g, "");
+        }
+      }
+      var btn = document.getElementsByClassName("btn");
+      for (i = 0; i < btn.length; i++) {
+        btn[i].className = btn[i].className.replace(/\bactive\b/g, "");
+      }
+      ctrl.className += " active";
+   }
+
+   function getUrlParameter(name) {
+   // name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
+
+  if(getUrlParameter('action') == "cached_data"){
+    var products= document.getElementsByName("products");
+    products.forEach(function (node) { 
+      var p_id = node.getAttribute("data-id");
+      var p_price = node.getAttribute("data-price");
+      var p_name = node.innerText;
+      var p_details = '{"name": "'+ p_name + '", "price": "'+p_price+'"}';
+      localStorage.setItem(p_id, p_details);
+    }); 
+  }else if(getUrlParameter('action') == "clear"){
+      localStorage.clear();
+  }
+        var idx= 0;
+        var time= 1000;
+        var images= [];
+
+        images[0] = "images/scroll2.jpg";
+        images[1] = "images/scroll3.jpg";
+
+        function changeImg(){
+            document.slide.src = images[idx];
+            idx = (idx < images.length - 1) ? idx+1 : 0;
+            setTimeout("changeImg()", time);
+        }
+        window.onload = changeImg();
+
+  </script>
+
+
+
+</html>
+        
+
+      
+      
+

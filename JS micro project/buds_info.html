@@ -1,0 +1,64 @@
+<script>
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
+    function goto_address(){
+        let form = document.createElement('form');
+        form.action = 'http://127.0.0.1:5500/addressform.html';
+        form.method = 'GET';
+        form.innerHTML = '<input name="product" value="'+getUrlParameter("product")+'">';
+        document.body.append(form);
+        form.submit();
+    }
+</script>
+<div style="background-color: salmon; text-align: center;">
+    <img  src="images/symbol.jpg" alt="online shop" width="150" height="100">
+    <span style="font-size: x-large; font-weight: bold">Product Kart</span>
+</div>
+</br></br>
+<div>
+    <div class="myDiv" style="width: 25%;float: left;border: antiquewhite 2px solid; text-align: center;  padding: 25px;">
+    <img src="images/buds2.jpeg" width="310px" height="470px" ></br></br>
+    <input type="button" value="BUY NOW" style="width: 150px; height: 40; background-color: orange;" onclick="goto_address()">
+  
+    </div>
+
+<div style="width: 60%; float: left;padding: 40px; border: antiquewhite 2px solid;">
+    <span><h3>WeCool Earbuds Moonwalk X True Wireless Bluetooth Headset  (Black, True Wireless)</h3>
+              50 Ratings & 13 Reviews</br></br>
+             <h2> ₹1,999 </h2></br>
+              <h3>Highlights</h3></br>
+              With Mic:Yes</br></br>
+              Bluetooth version: 5</br></br>
+              Wireless range: 10 m</br></br>
+              Battery life: 60 hr | Charging time: 2 Hours</br></br></br>
+            </br>
+              <h3>Specifications</h3>
+              <h3>General</h3>
+              
+          <div style="width: 30%; float: left;"> 
+              
+           Model Name: </br></br>
+           Color:   </br></br>              
+           Headphone Type:     </br></br>             
+           Inline Remote:         </br></br>              
+           Sales Package:    </br></br>           
+           Connectivity:  </br></br> 
+          </div>
+          <div style="width: 60%; float: left;">   
+        
+            SoundSport True Wireless High Bass Bluetooth Headset with Mic</br></br>  
+            Black </br></br>    
+            True Wireless</br></br>  
+            No</br></br>     
+            1 Pair of Wireless Earbuds (Left & Right), 1 Charging Case ,1 Micro-USB Cable,1 User Manual ,2 Ear Tips</br></br> 
+            Bluetooth</br></br>
+        </div>
+
+    </span>
+</div>
+</div>

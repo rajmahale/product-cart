@@ -1,0 +1,67 @@
+<script>
+  function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
+
+  function goto_address(){
+      let form = document.createElement('form');
+      form.action = 'http://127.0.0.1:5500/addressform.html';
+      form.method = 'GET';
+      form.innerHTML = '<input name="product" value="'+getUrlParameter("product")+'">';
+      document.body.append(form);
+      form.submit();
+  }
+</script>
+<div style="background-color: salmon; text-align: center;">
+    <img  src="images/symbol.jpg" alt="online shop" width="150" height="100">
+    <span style="font-size: x-large; font-weight: bold">Product Kart</span>
+</div>
+</br></br>
+<div>
+    <div class="myDiv" style="width: 25%;float: left;border: antiquewhite 2px solid; text-align: center;  padding: 30px;">
+    <img src="images/macproinfo.jpeg" width="400px" height="300px" ></br></br>
+    <input type="button" value="BUY NOW" style="width: 150px; height: 40; background-color: orange;" onclick="goto_address()">
+  
+    </div>
+
+<div style="width: 60%; float: left;padding: 40px; border: antiquewhite 2px solid;">
+    <span>
+        <h3>Apple MacBook Pro Core i7 9th Gen - (16 GB/512 GB SSD/Mac OS Catalina/4 GB Graphics) MVVJ2HN/A  (16 inch, Space Grey, 2 kg)</h3>
+              629 Ratings & 140 Reviews</br></br>
+             <h2> ₹1,99,490 </h2></br>
+              <h3>Highlights</h3></br>
+              Light Laptop without Optical Disk Drive</br></br>
+              16 inch Quad HD LED Backlit IPS Retina Display (500 nits Brightness, Wide Color (P3), True Tone Technology)</br></br>
+            </br>
+              <h3>Specifications</h3>
+              <h3>General</h3>
+              
+          <div style="width: 30%; float: left;"> 
+            Sales Package: </br></br></br>     
+            Model Number:   </br></br>              
+            Part Number:     </br></br>             
+            Series:         </br></br>              
+            Color:    </br></br>           
+            Type:  </br></br> 
+            Suitable For:  </br></br> 
+            Battery Backup:  </br></br> 
+            Power Supply:  </br></br> 
+          </div>
+          <div style="width: 60%; float: left;">   
+          MacBook Pro, 96 W USB Type C Power Adapter, USB Type C Charge Cable (2 m), User Guide, Warranty Documents</br></br>  
+          MVVJ2HN/A</br></br>    
+          MVVJ2HN/A</br></br>  
+          MacBook Pro</br></br>     
+          Space Grey</br></br> 
+          Laptop</br></br>
+          Processing & Multitasking</br></br>
+          Upto 11 hours</br></br>
+          96 W AC Adapter</br></br>
+        </div>
+
+    </span>
+</div>
+</div>

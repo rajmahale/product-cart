@@ -1,0 +1,68 @@
+<script>
+  function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
+
+  function goto_address(){
+      let form = document.createElement('form');
+      form.action = 'http://127.0.0.1:5500/addressform.html';
+      form.method = 'GET';
+      form.innerHTML = '<input name="product" value="'+getUrlParameter("product")+'">';
+      document.body.append(form);
+      form.submit();
+  }
+</script>
+<div style="background-color: salmon; text-align: center;">
+    <img  src="images/symbol.jpg" alt="online shop" width="150" height="100">
+    <span style="font-size: x-large; font-weight: bold">Product Kart</span>
+</div>
+</br></br>
+<div>
+    <div class="myDiv" style="width: 25%;float: left;border: antiquewhite 2px solid; text-align: center;  padding: 20px;">
+    <img src="images/reno_info.jpeg" width="310px" height="470px" ></br></br>
+    <input type="button" value="BUY NOW" style="width: 150px; height: 40; background-color: orange;" onclick="goto_address()">
+  
+    </div>
+
+<div style="width: 60%; float: left;padding: 40px; border: antiquewhite 2px solid;">
+    <span><h3>OPPO Reno4 Pro (Starry Night, 128 GB)  (8 GB RAM)</h3>
+              1,144 Ratings & 147 Reviews</br></br>
+             <h2> ₹34,990</h2></br>                                                                                                                                  
+              <h3>Highlights</h3></br>
+              8 GB RAM | 128 GB ROM | Expandable Upto 256 GB</br></br>
+              16.51 cm (6.5 inch) Full HD+ Display</br></br>
+              48MP + 8MP + 2MP + 2MP | 32MP Front Camera</br></br>
+              Qualcomm Snapdragon 720G Octa Core Processor</br></br>
+              4000 mAh Lithium-ion Polymer Battery</br></br></br>
+              <h3>Product Description:</h3>
+              <h3>3D Curved Design</h3>
+              Smooth and aesthetic! This phone’s 3D curved design will be one worth flaunting.
+            </br></br>
+              <h3>Specifications</h3>
+             
+          <div style="width: 30%; float: left;"> 
+            
+            In The Box: </br></br></br>
+            Model Number:    </br></br>    
+            Model Name:   </br></br>              
+            Color:     </br></br>             
+            Browse Type:         </br></br>              
+            SIM Type:    </br></br>           
+            Hybrid Sim Slot:  </br></br> 
+          </div>
+          <div style="width: 60%; float: left;">   
+            Handset, Adapter, Earphone, Data Cable, SIM Card Tool, Case, Quick Start Guide, Warranty Card</br></br>  
+            CPH2109</br></br>   
+            Reno4 Pro </br></br>    
+            Starry Night</br></br>  
+            Smartphones</br></br>     
+            Dual Sim</br></br> 
+            No</br></br>
+        </div>
+
+    </span>
+</div>
+</div>

@@ -1,0 +1,44 @@
+<div style="border: rebeccapurple 2px solid;width: 45%; padding: 5%;">
+    <h1>Your Order Details</h1>
+    <div style="width: 80%;float: left;">
+      <label id="product_name"></label>
+    </div>
+    <div>
+       <label id="product_price"></label>
+    </div></br></br>
+    <div style="width: 50%;">
+        <label id="address"></label>
+    </div></br></br>
+
+    <div style="width: 80%;float: left;">
+        <label>Delivery charges: </label>
+    </div>
+    <div>
+        ₹100
+    </div> </br>
+    <div style="width: 80%;float: left;" >
+        <h3> Amount Payable on Delivery:</h3>
+    
+    </div></br>
+    <div style="float: left;">
+        <label id="total"> </label>
+        </div>
+    
+
+</div>
+<script>
+       var p_name = JSON.parse(localStorage.getItem("order"))["name"];
+      var p_price = JSON.parse(localStorage.getItem("order"))["price"];
+      var p_building = JSON.parse(localStorage.getItem("order"))["building"];
+      var p_area = JSON.parse(localStorage.getItem("order"))["area"];
+      var p_mark = JSON.parse(localStorage.getItem("order"))["mark"];
+      var p_city = JSON.parse(localStorage.getItem("order"))["city"];
+      var p_state = JSON.parse(localStorage.getItem("order"))["state"];
+      var p_pin = JSON.parse(localStorage.getItem("order"))["pin"];
+      var p_total =  parseInt(p_price.replace(/,/g, "")) + 100
+
+      document.getElementById("product_name").innerHTML = p_name;
+      document.getElementById("product_price").innerHTML = p_price;
+      document.getElementById("total").innerHTML = "₹"+p_total;
+      document.getElementById("address").innerHTML = p_building + ", " + p_area + ", "+ p_mark + ", " + p_city + ", " + p_state + ", " + p_pin ;
+</script>

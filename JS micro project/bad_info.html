@@ -1,0 +1,65 @@
+<script>
+  function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
+
+  function goto_address(){
+      let form = document.createElement('form');
+      form.action = 'http://127.0.0.1:5500/addressform.html';
+      form.method = 'GET';
+      form.innerHTML = '<input name="product" value="'+getUrlParameter("product")+'">';
+      document.body.append(form);
+      form.submit();
+  }
+</script>
+<div style="background-color: salmon; text-align: center;">
+    <img  src="images/symbol.jpg" alt="online shop" width="150" height="100">
+    <span style="font-size: x-large; font-weight: bold">Product Kart</span>
+</div>
+</br></br>
+<div>
+    <div class="myDiv" style="width: 25%;float: left;border: antiquewhite 2px solid; text-align: center;  padding: 30px;">
+    <img src="images/badminton.jpeg" width="300px" height="450px" ></br></br>
+    <input type="button" value="BUY NOW" style="width: 150px; height: 40; background-color: orange;" onclick="goto_address()">
+  
+    </div>
+
+<div style="width: 60%; float: left;padding: 40px; border: antiquewhite 2px solid;">
+    <span>
+        <h3>Yonex cb - 88 Multicolor Strung Badminton Racquet  (Pack of: 2, 280 g)</h3>
+              178 Ratings & 27 Reviews</br></br>
+             <h2> ₹699 </h2></br>
+              <h3>Highlights</h3></br>
+              Cover: Half Cover</br></br>
+              Grip Size: G4 - 8.25 cm</br></br>
+              Weight: 280 g</br></br>
+              Head Shape:- Isometric Shape</br></br>
+
+            </br>
+              <h3>Specifications</h3>
+              <h3>General</h3>
+            
+          <div style="width: 30%; float: left;"> 
+            Type: </br></br>   
+            Series:   </br></br>              
+            Ideal For:     </br></br>                         
+            Playing Level:    </br></br>           
+            Brand Color:  </br></br> 
+            Cover:  </br></br> 
+
+          </div>
+          <div style="width: 60%; float: left;">   
+            Badminton Racquet</br></br>  
+            Others</br></br>    
+            Women, Junior, Men, Boys, Girls</br></br>  
+            Beginner</br></br>     
+            Multicolor</br></br> 
+            Half Cover</br></br> 
+        </div>
+
+    </span>
+</div>
+</div>

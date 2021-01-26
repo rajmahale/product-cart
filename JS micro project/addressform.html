@@ -1,0 +1,165 @@
+<form id="last_page" action="order.html">
+<div style="width: 22%; float: left; padding: 50px;">  </div>
+<div style="width: 40%; float: left; padding: 40px; border: silver 2px solid;">
+      <h2>Product Details</h2>       
+      <div style="font-weight: bold;">Name: <label id="product_name"></label></div></br>
+      <div style="font-weight: bold;">Price: <label id="product_price"></label></div>
+</div>        
+<div style="width: 22%; float: left; padding: 50px;"> </div>
+
+<div style="width: 40%; float: left; padding: 40px; border: silver 2px solid;">
+   <h2>Customer Details</h2>
+        <label>Name:</label></br>
+             <input type="text" id="name" value="" size="80"></br></br></br>
+        <label>Mobile No:</label></br>
+             <input type="text"  maxlength="10" id="mobile" value="" size="80"></br></br></br>
+        <label>Alternate phone No (Optional):</label></br>
+             <input type="text"  maxlength="10" id="phone" value="" size="80"></br></br></br>
+   
+</div>        
+<div style="width: 22%; float: left; padding: 50px;"> </div>
+
+<div style="width: 40%; float: left; padding: 40px; border: silver 2px solid;">
+     <h2>Address</h2>  
+        <label>Pincode:</label></br>
+              <input type="text" maxlength="6" id="pin" value="" size="80"></br></br></br>
+        <label>House No, Building Name:</label></br>
+              <input type="text" id="building" value="" size="80"></br></br></br>
+        <label>Road Name, Area ,Colony:</label></br>
+              <input type="text" id="area" value="" size="80"></br></br></br>
+        <label>City:</label></br>
+              <input type="text" id="city" value="" size="80"></br></br></br>
+        <label>State:</label></br>
+              <input type="text" id="state" value="" size="80"></br></br></br>
+        <label>Landmark:</label></br>
+              <input type="text" id="mark" value="" size="80"></br></br></br>
+</div>
+<div style="width: 22%; float: left; padding: 50px;"></div>
+
+<div style="width: 40%; float: left; padding: 40px; border: silver 2px solid;">
+     <h2>Address Type</h2>     
+        
+         <input type="radio" name="rad" value="">Home Address<br/><br/>
+        
+         <input type="radio" name="rad" value="">Work/Office Address
+</div>
+<div style="width: 22%; float: left; padding: 50px;">   </div>
+
+<div style="width: 40%; float: left; padding: 40px; border: silver 2px solid;">
+     <h2>Payment Type</h2>     
+         <select>
+                 <option>Cash on Delivery</option>
+         </select>
+         
+</div>
+<div style="width: 22%; float: left; padding: 50px;">   </div>
+<div style="width: 40%; float: left; padding: 40px;">
+      <input type="button" value="Place Order" onclick="place_order()">
+          
+ </div>
+</form>
+
+<script>
+      function getUrlParameter(name) {
+          //  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      };
+      var p_id = getUrlParameter("product");
+      var p_name = JSON.parse(localStorage.getItem(p_id))["name"];
+      var p_price = JSON.parse(localStorage.getItem(p_id))["price"];
+      console.log(p_id);
+      console.log(JSON.parse(localStorage.getItem(p_id))["name"]);
+      document.getElementById("product_name").innerHTML = p_name;
+      document.getElementById("product_price").innerHTML = p_price;
+      
+      function place_order(){
+            var p_id = getUrlParameter("product");
+            var p_name = JSON.parse(localStorage.getItem(p_id))["name"];
+            var p_price = JSON.parse(localStorage.getItem(p_id))["price"];
+            var building = document.getElementById("building").value;
+            var area = document.getElementById("area").value;
+            var landmark = document.getElementById("mark").value;
+            var city = document.getElementById("city").value;
+            var state = document.getElementById("state").value;
+            var pincode = document.getElementById("pin").value;
+            var o_details = '{"name": "'+ p_name + '", "price": "'+p_price+'", "building": "'+building+'", "area": "'+area+'", "mark": "'+landmark+'", "city": "'+city+'", "state": "'+state+'", "pin": "'+pincode+'"}';
+            localStorage.setItem("order", o_details);
+
+            var name_regx = /[a-zA-Z\s]{3,25}/;
+            var phone_regx = /^\d{3}\d{3}\d{4}$/;
+            var code_regx = /\d{6}/;
+           
+
+            var n = document.getElementById("name").value; 
+            var m = document.getElementById("mobile").value;
+            var c = document.getElementById("pin").value;
+            var b = document.getElementById("building").value;
+            var a = document.getElementById("area").value;
+            var ci = document.getElementById("city").value;
+            var s = document.getElementById("state").value;
+            var l = document.getElementById("mark").value;
+
+
+            if( !(n.length > 3 &&  n.length < 20  && name_regx.test(n)) ){
+               alert("Please Enter valid name");
+               return false;
+            }
+            if( !(m.length == 10 && phone_regx.test(m)) ){
+               alert("Please Enter valid 10 digit phone no with format xxxxxxxxxx");
+               return false;
+            }
+            if( !(c.length == 6 && code_regx.test(c)) ){
+               alert("Please Enter valid 6 digit pincode ");
+               return false;
+            }
+            if( b == ""){
+                  alert("Please enter valid house NO or Build.no");
+                  return false;
+            }
+            if( a == ""){
+                  alert("Please enter valid area or road name");
+                  return false;
+            }
+            if( ci == ""){
+                  alert("Please enter city name");
+                  return false;
+            }
+            if( s == ""){
+                  alert("Please enter your state");
+                  return false;
+            }
+            if( l == ""){
+                  alert("Please enter landmark");
+                  return false;
+            }
+
+            var radios = document.getElementsByName("rad");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                  if (radios[i].checked) formValid = true;
+                  i++;        
+            }
+            if(!formValid){
+                  alert("Please select one of the address option.");
+                  return false;
+            } 
+
+            document.getElementById("last_page").submit();
+
+            document.getElementById("name").value="";
+            document.getElementById("mobile").value="";
+            document.getElementById("phone").value="";
+            document.getElementById("pin").value="";
+            document.getElementById("building").value="";
+            document.getElementById("area").value="";
+            document.getElementById("city").value="";
+            document.getElementById("state").value="";
+            document.getElementById("mark").value="";
+
+      }
+</script>
+  

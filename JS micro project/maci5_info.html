@@ -1,0 +1,77 @@
+<script>
+  function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
+
+  function goto_address(){
+      let form = document.createElement('form');
+      form.action = 'http://127.0.0.1:5500/addressform.html';
+      form.method = 'GET';
+      form.innerHTML = '<input name="product" value="'+getUrlParameter("product")+'">';
+      document.body.append(form);
+      form.submit();
+  }
+</script>
+<div style="background-color: salmon; text-align: center;">
+    <img  src="images/symbol.jpg" alt="online shop" width="150" height="100">
+    <span style="font-size: x-large; font-weight: bold">Product Kart</span>
+</div>
+</br></br>
+<div>
+    <div class="myDiv" style="width: 25%;float: left;border: antiquewhite 2px solid; text-align: center;  padding: 30px;">
+    <img src="images/i5.jpeg" width="400px" height="300px" ></br></br>
+    <input type="button" value="BUY NOW" style="width: 150px; height: 40; background-color: orange;" onclick="goto_address()">
+  
+    </div>
+
+<div style="width: 60%; float: left;padding: 40px; border: antiquewhite 2px solid;">
+    <span>
+        <h3>Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra) MQD32HN/A A1466  (13.3 inch, Silver, 1.35 kg)</h3>
+               25,452 Ratings & 2,858 Reviews</br></br>
+             <h2> ₹72,490</h2></br>
+              <h3>Highlights</h3></br>
+              Stylish & Portable Thin and Light Laptop</br></br>
+              13.3 inch HD+ LED Backlit Display</br></br>
+              Light Laptop without Optical Disk Drive</br></br>
+            
+              <h3>Product Description:</h3>
+              It is fun to use, it is powerful and it looks incredible, meet the Apple MacBook Air.
+              This Sleek and Lightweight laptop is powered by Intel Core i5 5th Gen processor with
+              8 GB DDR3 RAM and 128 GB of SSD capacity to make multitasking smooth and easy. It is 
+              designed with a Backlit Keyboard and its Multi-Touch Trackpad will be an absolute pleasure 
+              to use.
+
+            </br>
+              <h3>Specifications</h3>
+              <h3>General</h3>
+              
+          <div style="width: 30%; float: left;"> 
+            Sales Package: </br></br></br>     
+            Model Number:   </br></br>              
+            Part Number:     </br></br>             
+            Series:         </br></br>              
+            Color:    </br></br>           
+            Type:  </br></br> 
+            Suitable For:  </br></br> 
+            Battery Backup:  </br></br> 
+            Power Supply:  </br></br> 
+          </div>
+          <div style="width: 60%; float: left;">   
+         
+           Laptop, Battery, Power Adaptor, User Guide, Warranty Documents</br></br>  
+           MQD32HN/A A1466</br></br>    
+           MQD32HN/A</br></br>  
+           MacBook Air</br></br>     
+           Silver</br></br> 
+           Thin and Light Laptop</br></br>
+           Travel & Business, Processing & Multitasking</br></br>
+           Upto 12 hours</br></br>
+           45 W MagSafe 2 Power Adapter</br></br>
+        </div>
+
+    </span>
+</div>
+</div>
